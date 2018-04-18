@@ -15,7 +15,7 @@ git config --global core.editor vim
 
 #Adding Git user and set any passwords to empiredidnothingwrong
 adduser admin --gecos "" --disabled-password
-echo "empiredidnothingwrong" | passwd admin
+echo -e "empiredidnothingwrong\nempiredidnothingwrong" | passwd admin
 
 #Creating Git admin directory
 mkdir /home/admin/admin && cd /home/admin/admin
@@ -28,7 +28,7 @@ service ssh restart
 Service apache2 start
 
 #Enable SSL and PHP modules within Apache configuration
-a2enmod ssl
+a2enmod ssl 
 a2enmod php7.0
 
 #Create SSL key
